@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------- #
 # 2022-09-27 (화요일) 5주 9차 다변량 분석 강의
-# 내용 : 회귀 분석 ()
+# 내용 : 회귀 분석
 #                                                 - 김재윤 교수님 -  
 # ---------------------------------------------------------------- #
 
@@ -122,18 +122,37 @@ summary(out)
 #   Min       1Q   Median       3Q      Max 
 # -10.2683  -2.6689  -0.2092   2.6342  11.9329 
 # 
+
+#  - 중요 - 
 # Coefficients:
 #   Estimate Std. Error t value Pr(>|t|)    
 # (Intercept) 39.11039    3.22706  12.120   <2e-16 ***
 #   Father       0.39938    0.04658   8.574   <2e-16 ***
+
 #   ---
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 # 
 # Residual standard error: 3.446 on 896 degrees of freedom
+
+#  - 중요 - 
 # Multiple R-squared:  0.07582,	Adjusted R-squared:  0.07479 
+
+#  - 중요 - 
 # F-statistic: 73.51 on 1 and 896 DF,  p-value: < 2.2e-16
 
-# PPT
-# P.29 까지 완료
+# 회귀분석에서 주의하게 봐야하는 것들
 
 # ---------------------------------------------------------------- #
+# 잔차 플롯을 구해야 하는것이 중요하다.
+
+# Residuals VS Fitted
+plot(out, which = 1)
+
+# Normal Q-Q
+plot(out, which = 2)
+
+# Scale-Location
+plot(out, which = 3)
+
+# Cook's distance
+plot(out, which = 4)
