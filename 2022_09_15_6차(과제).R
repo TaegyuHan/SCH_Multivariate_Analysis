@@ -218,7 +218,7 @@ box1Plot <- ggplot(MASS::cats, aes(x=Sex, y=Bwt)) +
 # 대립 가설 : 두 집단의 분산은 서로 동일하지 않다.
 
 # 동일성 검정
-# var.test(MASS::cats$Hwt ~ MASS::cats$Sex)
+var.test(MASS::cats$Hwt ~ MASS::cats$Sex)
 # F test to compare two variances
 # 
 # data:  MASS::cats$Hwt by MASS::cats$Sex
@@ -331,4 +331,10 @@ box3Plot <- ggplot(InsectSprays, aes(x=spray, y=count)) +
   geom_boxplot() + 
   stat_summary(fun = mean, geom = "point", shape = 20, size = 8) + 
   theme(legend.position = "none")
+
+# 일원 분산분석을 통해 검정한 결과,
+# 검정 통계량 34.702, 유의확률2.2e-16로
+# 유의 수준 0.05에서 통계적으로 유의한 차이를 보였습니다. 
+# 즉, 살충제 간 살충 효과가 차이가 나는 것으로 볼 수 있습니다.
+
 
