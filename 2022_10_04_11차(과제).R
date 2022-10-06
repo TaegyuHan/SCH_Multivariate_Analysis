@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------- #
-# 2022-10-04 (목요일) 6주 11차 다변량 분석 강의
+# 2022-10-04 (화요일) 6주 11차 다변량 분석 강의
 # 내용 : 회귀 분석
 #                                                 - 김재윤 교수님 -  
 # ---------------------------------------------------------------- #
@@ -190,7 +190,7 @@ summary(women.lm)
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 # 
 # Residual standard error: 1.525 on 13 degrees of freedom
-# Multiple R-squared:  0.991,	Adjusted R-squared:  0.9903 
+# Multiple R-squared:  0.991,	Adjusted R-squared:  0.9903 < 결정 계수
 
 # (회귀모형에 대한 적합성 검정)
 # F-statistic:  1433 on 1 and 13 DF,  p-value: 1.091e-14
@@ -201,6 +201,10 @@ plot(women$weight, women$height)
 
 # 2. 단순선형회귀직선을 구하여 산점도에 함께 나타내시오.
 lines(women.lm$fitted.values, women$height)
+
+# 독립성 : X
+# 선형 : X
+# 정규 : X
 
 # 3. 모형 적합성에 대해 검정하시오.
 # 귀무가설 : 모형은 적합하지 않다.
@@ -259,7 +263,7 @@ str(airquality[,1:4])
 # Ozone 종속변수이며, Solar.R(일조량), Wind(풍속), Temp(기온)
 # (식)> Ozone ~ Solar.R + Wind + Temp
 
-airquality.lm <- lm(airquality$Ozone 
+airquality.lm <- lm(airquality$Ozone
                     ~ airquality$Solar.R 
                     + airquality$Wind 
                     + airquality$Temp)
@@ -372,7 +376,6 @@ boston.data$chas <- factor(boston.data$chas)
 #결측치확인
 boston.data %>% is.na() %>% sum()
 # [1] 0
-
 
 #기초통계량
 summary(boston.data)
