@@ -9,6 +9,7 @@ library(data.table)
 library(caret)
 library(ROCR)
 library(e1071)
+library(faraway)
 data(Default)
 
 
